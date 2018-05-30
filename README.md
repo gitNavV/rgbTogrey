@@ -1,6 +1,25 @@
 # rgbTogrey
 A C++ implementation of GPU accelerated Image Processing using OpenCV for conversion of any color image into its greyscale version.
 
+
+# Building on OS X
+
+These instructions are for OS X 10.9 "Mavericks".
+
+* Step 1. Build and install OpenCV. The best way to do this is with
+Homebrew. However, you must slightly alter the Homebrew OpenCV
+installation; you must build it with libstdc++ (instead of the default
+libc++) so that it will properly link against the nVidia CUDA dev kit.
+
+* Step 2. You can now create 10.9-compatible makefiles, which will allow you to
+build and run your homework on your own machine:
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
 Instruction for make :
 
 NVCC=nvcc
