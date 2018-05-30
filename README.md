@@ -32,13 +32,13 @@ make
 
 # On Macs the default install locations are below
 
-<b>#OPENCV_LIBPATH</b> = ```/usr/local/lib```</br>
-<b>#OPENCV_INCLUDEPATH</b> = ```/usr/local/include```</br>
+<b>OPENCV_LIBPATH</b> = ```/usr/local/lib```</br>
+<b>OPENCV_INCLUDEPATH</b> = ```/usr/local/include```</br>
 
 # or if using MacPorts
 
-<b>#OPENCV_LIBPATH</b> = ```/opt/local/lib```</br>
-<b>#OPENCV_INCLUDEPATH</b> = ```/opt/local/include```</br>
+<b>OPENCV_LIBPATH</b> = ```/opt/local/lib```</br>
+<b>OPENCV_INCLUDEPATH</b> = ```/opt/local/include```</br>
 
 <b>OPENCV_LIBS</b> = ```-lopencv_core -lopencv_imgproc -lopencv_highgui```</br>
 
@@ -46,8 +46,8 @@ make
 
 # On Macs the default install locations are below
 
-<b>#CUDA_INCLUDEPATH</b> = ```/usr/local/cuda/include```</br>
-<b>#CUDA_LIBPATH</b> = ```/usr/local/cuda/lib```</br>
+<b>CUDA_INCLUDEPATH</b> = ```/usr/local/cuda/include```</br>
+<b>CUDA_LIBPATH</b> = ```/usr/local/cuda/lib```</br>
 
 <b>NVCC_OPTS</b> = ```-O3 -arch=sm_20 -Xcompiler -Wall -Xcompiler -Wextra -m64```</br>
 
