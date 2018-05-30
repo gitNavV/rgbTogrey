@@ -20,59 +20,55 @@ cmake ..
 make
 ```
 
-Instruction for make :
+<b>Instruction for make</b> :
 
-NVCC=nvcc
+<b>NVCC</b> = nvcc
 
-###################################
-# These are the default install   #
-# locations on most linux distros #
-###################################
+# These are the default install
+# locations on most linux distros
 
-OPENCV_LIBPATH=/usr/lib
-OPENCV_INCLUDEPATH=/usr/include
 
-###################################################
-# On Macs the default install locations are below #
-###################################################
+<b><b>OPENCV_LIBPATH</b> = ```/usr/lib```
+<b>OPENCV_INCLUDEPATH</b> = ```/usr/include```
 
-#OPENCV_LIBPATH=/usr/local/lib
-#OPENCV_INCLUDEPATH=/usr/local/include
+# On Macs the default install locations are below
+
+<b>#OPENCV_LIBPATH</b> = ```/usr/local/lib```
+<b>#OPENCV_INCLUDEPATH</b> = ```/usr/local/include```
 
 # or if using MacPorts
 
-#OPENCV_LIBPATH=/opt/local/lib
-#OPENCV_INCLUDEPATH=/opt/local/include
+<b>#OPENCV_LIBPATH</b> = ```/opt/local/lib```
+<b>#OPENCV_INCLUDEPATH</b> = ```/opt/local/include```
 
-OPENCV_LIBS=-lopencv_core -lopencv_imgproc -lopencv_highgui
+<b>OPENCV_LIBS</b> = ```-lopencv_core -lopencv_imgproc -lopencv_highgui```
 
-CUDA_INCLUDEPATH=/usr/local/cuda-5.0/include
+<b>CUDA_INCLUDEPATH</b> =  ```/usr/local/cuda-5.0/include```
 
-######################################################
-# On Macs the default install locations are below    #
-# ####################################################
 
-#CUDA_INCLUDEPATH=/usr/local/cuda/include
-#CUDA_LIBPATH=/usr/local/cuda/lib
+# On Macs the default install locations are below
 
-NVCC_OPTS=-O3 -arch=sm_20 -Xcompiler -Wall -Xcompiler -Wextra -m64
+<b>#CUDA_INCLUDEPATH</b> = ```/usr/local/cuda/include```
+<b>#CUDA_LIBPATH</b> = ```/usr/local/cuda/lib```
 
-GCC_OPTS=-O3 -Wall -Wextra -m64
+<b>NVCC_OPTS</b> = ```-O3 -arch=sm_20 -Xcompiler -Wall -Xcompiler -Wextra -m64```
 
-<b>student:</b> main.o student_func.o compare.o reference_calc.o Makefile
-	$(NVCC) -o HW1 main.o student_func.o compare.o reference_calc.o -L $(OPENCV_LIBPATH) $(OPENCV_LIBS) $(NVCC_OPTS)
+<b>GCC_OPTS</b> = ```-O3 -Wall -Wextra -m64```
 
-<b>main.o:</b> main.cpp timer.h utils.h reference_calc.cpp compare.cpp HW1.cpp
-	g++ -c main.cpp $(GCC_OPTS) -I $(CUDA_INCLUDEPATH) -I $(OPENCV_INCLUDEPATH)
+<b>student:</b> <i>main.o student_func.o compare.o reference_calc.o Makefile</i>
+	```$(NVCC) -o HW1 main.o student_func.o compare.o reference_calc.o -L $(OPENCV_LIBPATH) $(OPENCV_LIBS) $(NVCC_OPTS)```
 
-<b>student_func.o:</b> student_func.cu utils.h
-	nvcc -c student_func.cu $(NVCC_OPTS)
+<b>main.o:</b> <i>main.cpp timer.h utils.h reference_calc.cpp compare.cpp HW1.cpp</i>
+	```g++ -c main.cpp $(GCC_OPTS) -I $(CUDA_INCLUDEPATH) -I $(OPENCV_INCLUDEPATH)```
 
-<b>compare.o:</b> compare.cpp compare.h
-	g++ -c compare.cpp -I $(OPENCV_INCLUDEPATH) $(GCC_OPTS) -I $(CUDA_INCLUDEPATH)
+<b>student_func.o:</b> <i>student_func.cu utils.h</i>
+	```nvcc -c student_func.cu $(NVCC_OPTS)```
 
-<b>reference_calc.o:</b> reference_calc.cpp reference_calc.h
-	g++ -c reference_calc.cpp -I $(OPENCV_INCLUDEPATH) $(GCC_OPTS) -I $(CUDA_INCLUDEPATH)
+<b>compare.o:</b> <i>compare.cpp compare.h</i>
+	```g++ -c compare.cpp -I $(OPENCV_INCLUDEPATH) $(GCC_OPTS) -I $(CUDA_INCLUDEPATH)```
+
+<b>reference_calc.o:</b> <i>reference_calc.cpp reference_calc.h</i>
+	```g++ -c reference_calc.cpp -I $(OPENCV_INCLUDEPATH) $(GCC_OPTS) -I $(CUDA_INCLUDEPATH)```
 
 <b>clean:</b>
-	rm -f *.o *.png hw
+	```rm -f *.o *.png hw```
