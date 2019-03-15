@@ -1,5 +1,5 @@
 # rgbTogrey
-A C++ implementation for conversion of any color image into its greyscale version.
+A C++ implementation of GPU accelerated conversion of any color image into its greyscale version.
 
 
 # Building on OS X
